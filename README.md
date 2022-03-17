@@ -1,5 +1,8 @@
 # presence-script
 
+Kegunaan:
+- Mengisi kolom absen secara otomatis dengan menggunakan data daftar mahasiswa dan attendance report pada Teams meeting
+
 Langkah penggunaan:
 
 1. Buka file daftar mahasiswa, tambahkan kolom tanggal yang mau diisi, save dengan nama daftar-mhs_vLive.csv
