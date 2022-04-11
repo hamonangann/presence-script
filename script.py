@@ -23,7 +23,8 @@ Left_join = pd.merge(df1,
                      on ='Nama', 
                      how ='left')
 
-Left_join[column_tanggal] = np.where(Left_join['Duration'].isnull(),'0','1')
+Left_join[column_tanggal] = np.where((Left_join['Duration'].isnull()) & (Left_join[column_tanggal].isnull()),'0', Left_join[column_tanggal])
+Left_join[column_tanggal] = np.where((~Left_join['Duration'].isnull()) & (Left_join[column_tanggal].isnull()),'1', Left_join[column_tanggal])
 
 Left_join.to_csv('res_data.csv', index=False)
 
