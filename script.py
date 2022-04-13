@@ -15,8 +15,8 @@ column_tanggal = input()
 df1 = pd.read_csv('daftar-mhs_vLive.csv', sep=';')
 df2 = pd.read_csv('meetingAttendanceReport.csv', sep=';')
 df2 = df2.drop_duplicates(subset=['Nama'], keep='last')
-
-
+df1['Nama'] = df1['Nama'].map(lambda x: x.lower() if isinstance(x,str) else x)
+df2['Nama'] = df2['Nama'].map(lambda x: x.lower() if isinstance(x,str) else x)
    
 Left_join = pd.merge(df1, 
                      df2, 
